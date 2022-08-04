@@ -2,6 +2,11 @@ package model
 
 import kotlinx.serialization.Serializable
 
+/**
+ * This is the default value of maximum project key size.
+ *
+ * [Jira Doc](https://support.atlassian.com/jira-cloud-administration/docs/configure-jira-application-options/)
+ */
 private const val MAX_NAME_LENGTH = 10
 private const val DEFAULT_MAX_TASK_NUMBER_LENGTH = 5
 private const val DEFAULT_MIN_TASK_NUMBER_LENGTH = 1
