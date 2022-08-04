@@ -1,0 +1,8 @@
+{
+  "projects": [
+    {
+      "name": "SMTH",
+      "baseUrl": "https://some.example.com"
+    }
+  ]
+}

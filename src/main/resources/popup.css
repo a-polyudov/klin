@@ -1,0 +1,34 @@
+body {
+    width: 250px;
+}
+
+.project-element {
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.project-label {
+    border: solid;
+    border-color: azure;
+    background-color: AliceBlue;
+    padding: 1%;
+    color: black;
+    font-weight: bold;
+    float: left;
+}
+
+.task-number-span {
+    float: right;
+}
+
+.task-number-input {
+    margin-left: 10px
+}
+
+.task-number-input:valid {
+    background-color: white;
+}
+
+.task-number-input:invalid {
+    background-color: rgba(216, 130, 130, 0.427);
+}
