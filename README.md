@@ -13,7 +13,7 @@ Now it was testing only with Google Chrome.
     ./gradelw clean klin
     ```
 1. Go to `./klin` and add settings to `settings.json` file. 
-   ```json
+   ```
    {
      "projests": [
        {
