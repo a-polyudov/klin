@@ -21,6 +21,7 @@ private val URL_REGEXP =
 data class Project(
   val name: String,
   val baseUrl: String,
+  val logoPath: String? = null,
   val maxTaskNumberLength: Int = DEFAULT_MAX_TASK_NUMBER_LENGTH,
   val minTaskNumberLength: Int = DEFAULT_MIN_TASK_NUMBER_LENGTH,
 ) {

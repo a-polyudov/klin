@@ -6,7 +6,7 @@ import org.w3c.dom.events.Event
 /**
  * @author poludov
  */
-class OnFocusOutEventListener(override val input: HTMLInputElement) : InputEventListener {
+class OnFocusOutEventListener(override val input: HTMLInputElement) : EventListener<HTMLInputElement> {
   override val type = "focusout"
 
   override fun handle(event: Event) {

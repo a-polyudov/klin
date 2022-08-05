@@ -1,28 +1,21 @@
-body {
-    width: 250px;
+.project-element {
+    display: table;
+    margin-right: 10px;
 }
 
-.project-element {
-    padding-bottom: 20px;
-    margin-bottom: 10px;
+.project-name {
+    display: table-cell;
 }
 
 .project-label {
-    border: solid;
-    border-color: azure;
-    background-color: AliceBlue;
-    padding: 1%;
     color: black;
-    font-weight: bold;
-    float: left;
+    text-decoration: underline;
 }
 
 .task-number-span {
-    float: right;
-}
-
-.task-number-input {
-    margin-left: 10px
+    display: table-cell;
+    padding: 3%;
+    margin: auto;
 }
 
 .task-number-input:valid {

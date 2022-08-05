@@ -12,7 +12,7 @@ import org.w3c.dom.events.KeyboardEvent
 class OnKeyPressEventListener(
   private val project: Project,
   override val input: HTMLInputElement,
-) : InputEventListener {
+) : EventListener<HTMLInputElement> {
   override val type = "keypress"
 
   override fun handle(event: Event) {

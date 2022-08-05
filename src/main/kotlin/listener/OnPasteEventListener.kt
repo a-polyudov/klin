@@ -7,7 +7,7 @@ import org.w3c.dom.events.Event
 /**
  * @author poludov
  */
-class OnPasteEventListener(override val input: HTMLInputElement) : InputEventListener {
+class OnPasteEventListener(override val input: HTMLInputElement) : EventListener<HTMLInputElement> {
   override val type = "paste"
 
   override fun handle(event: Event) {

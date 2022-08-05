@@ -1,6 +1,6 @@
 {
   "name": "klin",
-  "description": "Tiny tool for easy opening an JIRA issue",
+  "description": "The tiny tool to easily open a JIRA issue",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
