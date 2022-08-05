@@ -1,6 +1,10 @@
 # klin
 The tiny tool to easily open a JIRA issue
 
+
+<img width="240" alt="klin example" src="https://user-images.githubusercontent.com/17144826/183117139-46846061-ab05-49f8-ab1c-e37e4d18cb86.png">
+
+
 ## Project status 
 This is a personal R&D project and it is still in developing stage.
 
