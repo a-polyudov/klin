@@ -24,8 +24,8 @@ object ProjectElementBuilder {
           div("project-logo") {
             img {
               src = project.logoPath
-              width = "30"
-              height = "30"
+              width = "40"
+              height = "40"
               tabIndex = "-1"
             }
           }

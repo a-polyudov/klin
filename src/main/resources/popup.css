@@ -1,22 +1,30 @@
+.container {
+    display: table
+}
+
 .project-element {
-    display: table;
+    display: table-row;
     margin-right: 10px;
     margin-top: 7px;
 }
 
 .project-name {
     display: table-cell;
+    text-align: center;
 }
 
 .project-label {
     color: black;
-    text-decoration: underline;
 }
 
 .task-number-span {
     display: table-cell;
     padding: 3%;
     margin: auto;
+}
+
+.task-number-input {
+    margin-right: 10px;
 }
 
 .task-number-input:valid {

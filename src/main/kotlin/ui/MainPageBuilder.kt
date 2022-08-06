@@ -2,7 +2,6 @@ package ui
 
 import kotlinx.browser.document
 import kotlinx.html.dom.append
-import kotlinx.html.id
 import kotlinx.html.js.div
 import kotlinx.html.js.span
 import model.Project
@@ -26,9 +25,7 @@ object MainPageBuilder {
 
   private fun projectsMainPage(projects: List<Project>) {
     document.body?.append
-      ?.div {
-        id = "root-container"
-      }
+      ?.div("container")
       ?.apply {
         projects
           .forEachIndexed { index, project ->
