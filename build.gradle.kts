@@ -35,19 +35,19 @@ kotlin {
 }
 
 tasks {
-  val releaseDirPath = "${rootDir.toPath()}/release"
+  val releaseDirPath = "${rootDir.toPath()}/klin"
 
-  val clearReleaseDir by registering(Delete::class) {
+  val clearKlinDir by registering(Delete::class) {
     group = "build"
     delete(releaseDirPath)
   }
 
   named("clean") {
-    dependsOn(clearReleaseDir)
+    dependsOn(clearKlinDir)
   }
 
   @Suppress("UNUSED_VARIABLE")
-  val release by registering {
+  val klin by registering {
     group = "build"
     dependsOn("detekt", "assemble", "test")
     doLast {
