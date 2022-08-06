@@ -19,7 +19,7 @@ Now it was testing only with Google Chrome.
 1. Go to `./klin` and add settings to `settings.json` file. 
    ```
    {
-     "projests": [
+     "projects": [
        {
          "name":"string", //Jira key (required). Example: WEB
          "baseUrl":"string", //Base URL to your Jira instanse (required). Example: https://you.jira.instance
