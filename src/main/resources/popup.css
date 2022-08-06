@@ -1,3 +1,8 @@
+body {
+    background: linear-gradient(to left top, #dee8ef85, white);
+    background-attachment: fixed;
+}
+
 .container {
     display: table
 }
@@ -14,7 +19,9 @@
 }
 
 .project-label {
-    color: black;
+    color: #040404b0;
+    font-family: monospace;
+    font-size: 1.0rem;
 }
 
 .task-number-span {
@@ -32,5 +39,5 @@
 }
 
 .task-number-input:invalid {
-    background-color: rgba(216, 130, 130, 0.427);
+    background: linear-gradient(to right top, rgba(236, 130, 130, 0.427), white);
 }
