@@ -35,7 +35,7 @@ Now it was testing only with Google Chrome.
     - Menu -> More Tools -> Extensions
     - Enable "Developer mode"
     - Press "Load unpacked"
-    - Select the `./klin' folder
+    - Select the `./klin` folder
 
 ## Usage
 
