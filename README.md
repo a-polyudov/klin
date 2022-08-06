@@ -2,7 +2,7 @@
 The tiny tool to easily open a JIRA issue
 
 
-<img width="240" alt="klin example" src="https://user-images.githubusercontent.com/17144826/183117139-46846061-ab05-49f8-ab1c-e37e4d18cb86.png">
+<img width="226" alt="image" src="https://user-images.githubusercontent.com/17144826/183248468-4f4873e0-78e5-470c-b333-cdb7181f52bc.png">
 
 
 ## Project status 
