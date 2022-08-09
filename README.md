@@ -14,7 +14,7 @@ Now it was testing only with Google Chrome.
 
 1. Assemble
     ```
-    ./gradelw clean klin
+    ./gradlew clean klin
     ```
 1. Go to `./klin` and add settings to `settings.json` file. 
    ```
