@@ -38,6 +38,9 @@ data class Project(
     require(URL_REGEXP.matches(baseUrl)) {
       "Project '${name}' base URL is invalid "
     }
+    require(maxTaskNumberLength >= minTaskNumberLength) {
+      "Project '${name}' task number length params are invalid"
+    }
   }
 
   fun buildUrl(taskNumber: String): String = "$baseUrl/browse/$name-$taskNumber"
