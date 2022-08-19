@@ -30,7 +30,7 @@ Now it was testing only with Google Chrome.
      ]
    }
    ```
-   With these settings, klin will open pages with links like `https://you.jira.instanse/WEB-1`
+   With these settings, `klin` will open pages with links like `https://you.jira.instanse/WEB-1`
 1. Open your Chrome and add new extension
     - Menu -> More Tools -> Extensions
     - Enable "Developer mode"
@@ -47,4 +47,4 @@ Or you can open `klin` from extensions toolbar.
 
 If multiple projects have been added to `settings.json` you can use Tab to change active project.
 
-Print task number (or paste it from the clipboard) and then press `Enter`. Jira task will be opened in new window.
+Type task number (or paste it from the clipboard) and then press `Enter`. Jira task will be opened in new tab.
