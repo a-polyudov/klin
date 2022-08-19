@@ -57,7 +57,7 @@ object ProjectElementBuilder {
       .apply {
         setCustomValidity("")
 
-        registerEventListener(OnPasteEventListener(this))
+        registerEventListener(OnPasteEventListener(project, this))
         registerEventListener(OnFocusOutEventListener(this))
         registerEventListener(OnKeyPressEventListener(project, this))
 
