@@ -47,11 +47,11 @@ object MainPageBuilder {
         a(classes = "fa") {
           href = "https://github.com/poludov/klin"
           target = "_blank"
+          tabIndex = "-1"
           img {
             src = "./github_logo.png"
             width = "15"
             height = "15"
-            tabIndex = "-1"
           }
           +" klin"
         }
