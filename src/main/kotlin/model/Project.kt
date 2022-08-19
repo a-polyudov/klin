@@ -40,5 +40,5 @@ data class Project(
     }
   }
 
-  fun buildUrl(taskNumber: String): String = "$baseUrl/$name-$taskNumber"
+  fun buildUrl(taskNumber: String): String = "$baseUrl/browse/$name-$taskNumber"
 }
