@@ -45,7 +45,7 @@ object MainPageBuilder {
     document.body?.append
       ?.div("github-link") {
         a(classes = "fa") {
-          href = "https://github.com/poludov/klin"
+          href = "https://github.com/a-polyudov/klin"
           target = "_blank"
           tabIndex = "-1"
           img {
