@@ -11,7 +11,7 @@ import org.w3c.dom.HTMLInputElement
 import org.w3c.dom.HTMLSpanElement
 
 /**
- * @author poludov
+ * @author a-polyudov
  */
 object ProjectElementBuilder {
   fun TagConsumer<HTMLElement>.buildHtmlFor(index: Int, project: Project) {

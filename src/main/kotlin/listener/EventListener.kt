@@ -4,7 +4,7 @@ import org.w3c.dom.HTMLElement
 import org.w3c.dom.events.Event
 
 /**
- * @author poludov
+ * @author a-polyudov
  */
 interface EventListener<T: HTMLElement> {
   val type: String

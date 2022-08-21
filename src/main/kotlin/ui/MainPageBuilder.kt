@@ -12,7 +12,7 @@ import model.Settings
 import ui.ProjectElementBuilder.buildHtmlFor
 
 /**
- * @author poludov
+ * @author a-polyudov
  */
 object MainPageBuilder {
   fun loadMainPage(settings: Settings) =

@@ -6,7 +6,7 @@ import org.w3c.dom.clipboard.ClipboardEvent
 import org.w3c.dom.events.Event
 
 /**
- * @author poludov
+ * @author a-polyudov
  */
 class OnPasteEventListener(
   project: Project,

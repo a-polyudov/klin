@@ -6,6 +6,9 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
+/**
+ * @author a-polyudov
+ */
 class ProjectDeserializationTest {
   @Test
   fun shouldThrowExceptionIfProjectNameIsEmptyString() {

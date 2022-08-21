@@ -6,7 +6,7 @@ import org.w3c.dom.HTMLSpanElement
 import org.w3c.dom.events.Event
 
 /**
- * @author poludov
+ * @author a-polyudov
  */
 class OnClickEventListener(
   private val project: Project,

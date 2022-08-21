@@ -15,7 +15,7 @@ private val URL_REGEXP =
 
 
 /**
- * @author poludov
+ * @author a-polyudov
  */
 @Serializable
 data class Project(

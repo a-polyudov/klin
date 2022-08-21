@@ -7,7 +7,7 @@ import org.w3c.dom.events.Event
 import org.w3c.dom.events.KeyboardEvent
 
 /**
- * @author poludov
+ * @author a-polyudov
  */
 class OnKeyPressEventListener(
   private val project: Project,

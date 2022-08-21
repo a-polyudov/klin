@@ -3,7 +3,7 @@ package model
 import kotlinx.serialization.Serializable
 
 /**
- * @author poludov
+ * @author a-polyudov
  */
 @Serializable
 data class Settings(

@@ -8,7 +8,7 @@ import model.Settings
 import ui.MainPageBuilder
 
 /**
- * @author poludov
+ * @author a-polyudov
  */
 fun main() {
   window.onload = {
@@ -21,7 +21,7 @@ fun main() {
 }
 
 /**
- * @author poludov
+ * @author a-polyudov
  */
 private suspend fun loadSettings(): Settings? =
   try {
