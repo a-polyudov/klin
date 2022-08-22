@@ -5,10 +5,7 @@ import kotlinx.browser.window
 import kotlinx.html.*
 import kotlinx.html.js.div
 import kotlinx.html.js.onClickFunction
-import listener.OnFocusOutEventListener
-import listener.OnKeyPressEventListener
-import listener.OnPasteEventListener
-import listener.registerEventListener
+import listener.*
 import model.Project
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.HTMLInputElement
@@ -61,6 +58,7 @@ object ProjectElementBuilder {
         registerEventListener(OnPasteEventListener(project, this))
         registerEventListener(OnFocusOutEventListener(this))
         registerEventListener(OnKeyPressEventListener(project, this))
+        registerEventListener(OnKeyDownEventListener(this))
 
         if (index == 0) {
           focus()
