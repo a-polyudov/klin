@@ -4,11 +4,14 @@ import kotlinx.browser.document
 import kotlinx.browser.window
 import kotlinx.html.*
 import kotlinx.html.js.div
-import listener.*
+import kotlinx.html.js.onClickFunction
+import listener.OnFocusOutEventListener
+import listener.OnKeyPressEventListener
+import listener.OnPasteEventListener
+import listener.registerEventListener
 import model.Project
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.HTMLInputElement
-import org.w3c.dom.HTMLSpanElement
 
 /**
  * @author a-polyudov
@@ -37,6 +40,9 @@ object ProjectElementBuilder {
             +project.name.uppercase()
           }
         }
+        onClickFunction = {
+          window.open(project.baseUrl, "_blank")
+        }
       }
       span("task-number-span") {
         input(type = InputType.text, classes = "task-number-input") {
@@ -47,11 +53,6 @@ object ProjectElementBuilder {
         }
       }
     }
-
-    (document.getElementById("${project.name}-project-name") as HTMLSpanElement)
-      .apply {
-        registerEventListener(OnClickEventListener(project, this))
-      }
 
     (document.getElementById("${project.name}-task-number-input") as HTMLInputElement)
       .apply {

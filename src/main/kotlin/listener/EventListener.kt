@@ -8,11 +8,10 @@ import org.w3c.dom.events.Event
  */
 interface EventListener<T: HTMLElement> {
   val type: String
-  val input: T
+  val element: T
 
   fun handle(event: Event)
 }
 
-fun <T : HTMLElement> T.registerEventListener(listener: EventListener<T>) {
+fun <T : HTMLElement> T.registerEventListener(listener: EventListener<T>) =
   addEventListener(listener.type, listener::handle)
-}

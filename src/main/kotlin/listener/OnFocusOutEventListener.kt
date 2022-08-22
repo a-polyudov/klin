@@ -6,10 +6,8 @@ import org.w3c.dom.events.Event
 /**
  * @author a-polyudov
  */
-class OnFocusOutEventListener(override val input: HTMLInputElement) : EventListener<HTMLInputElement> {
+class OnFocusOutEventListener(override val element: HTMLInputElement) : EventListener<HTMLInputElement> {
   override val type = "focusout"
 
-  override fun handle(event: Event) {
-    input.setCustomValidity("")
-  }
+  override fun handle(event: Event) = element.setCustomValidity("")
 }

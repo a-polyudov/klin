@@ -11,24 +11,22 @@ import org.w3c.dom.events.KeyboardEvent
  */
 class OnKeyPressEventListener(
   private val project: Project,
-  override val input: HTMLInputElement,
+  override val element: HTMLInputElement,
 ) : EventListener<HTMLInputElement> {
   override val type = "keypress"
 
   override fun handle(event: Event) {
-    event as KeyboardEvent
+    when ((event as KeyboardEvent).key) {
+      "Enter" -> if (element.value.isNotEmpty()) {
+        window.open(project.buildUrl(element.value), "_blank")
+      }
 
-    if (event.key == "Enter" && input.value.isNotEmpty()) {
-      window.open(project.buildUrl(input.value), "_blank")
-      event.preventDefault()
-      return
+      else -> event.key.toLongOrNull()
+        ?.let { element.setCustomValidity("") }
+        ?: run {
+          element.setCustomValidity("Invalid key")
+          event.preventDefault()
+        }
     }
-    val newValue = event.key.toLongOrNull()
-    if (newValue == null) {
-      input.setCustomValidity("Invalid key")
-      event.preventDefault()
-      return
-    }
-    input.setCustomValidity("")
   }
 }
