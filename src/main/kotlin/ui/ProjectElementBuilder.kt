@@ -38,7 +38,7 @@ object ProjectElementBuilder {
           }
         }
         onClickFunction = {
-          window.open(project.baseUrl, "_blank")
+          window.open("${project.baseUrl}/projects/${project.name.uppercase()}", "_blank")
         }
       }
       span("task-number-span") {
