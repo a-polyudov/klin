@@ -36,7 +36,13 @@ data class Project(
       "Project '${name}' base URL is blank"
     }
     require(URL_REGEXP.matches(baseUrl)) {
-      "Project '${name}' base URL is invalid "
+      "Project '${name}' base URL is invalid"
+    }
+    require(minTaskNumberLength > 0) {
+      "Project '${name}' min task number length should be positive"
+    }
+    require(maxTaskNumberLength > 0) {
+      "Project '${name}' max task number length should be positive"
     }
     require(maxTaskNumberLength >= minTaskNumberLength) {
       "Project '${name}' task number length params are invalid"
