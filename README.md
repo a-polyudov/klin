@@ -60,3 +60,4 @@ Or you can open `klin` from extensions toolbar.
 If multiple projects have been added to `settings.json` you can use Tab to change active project.
 
 Type task number (or paste it from the clipboard) and then press `Enter`. Jira task will be opened in new tab.
+If `Enter` was pressed with `Shift` then JIRA issue will be opened in the background (without focus).

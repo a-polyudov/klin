@@ -1,10 +1,12 @@
 package listener
 
-import kotlinx.browser.window
 import model.Project
 import org.w3c.dom.HTMLInputElement
 import org.w3c.dom.events.Event
 import org.w3c.dom.events.KeyboardEvent
+import kotlin.js.json
+
+private external val chrome: dynamic
 
 /**
  * @author a-polyudov
@@ -17,8 +19,17 @@ class OnKeyPressEventListener(
 
   override fun handle(event: Event) {
     when ((event as KeyboardEvent).key) {
-      "Enter" -> if (element.value.isNotEmpty()) {
-        window.open(project.buildUrl(element.value), "_blank")
+      "Enter" -> {
+        if (element.value.isNotEmpty()) {
+          chrome.tabs.create(
+            json(
+              "url" to project.buildUrl(element.value),
+              "active" to !event.shiftKey
+            )
+          )
+        } else {
+          element.setCustomValidity("Invalid key")
+        }
       }
 
       else -> event.key.toLongOrNull()

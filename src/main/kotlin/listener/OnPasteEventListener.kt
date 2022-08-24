@@ -29,7 +29,12 @@ class OnPasteEventListener(
 
   private fun handleWithValue(event: ClipboardEvent, value: String?, isValid: Boolean) {
     value?.let { element.value = it }
-    element.setCustomValidity(if (isValid) "" else "Invalid key")
+    if (isValid) {
+      element.setCustomValidity("")
+      element.setSelectionRange(0, element.value.length)
+    } else {
+      element.setCustomValidity("Invalid key")
+    }
     event.preventDefault()
   }
 }
