@@ -2,7 +2,7 @@
 The tiny tool to easily open a JIRA issue
 
 
-<img width="238" alt="image" src="https://user-images.githubusercontent.com/17144826/185670888-92e176b8-6132-425d-96b7-fe0d753f4662.png">
+<img width="214" alt="image" src="https://user-images.githubusercontent.com/17144826/186452528-5c0d650c-7325-4050-bf60-03399ca4db77.png">
 
 
 ## Project status 
@@ -16,22 +16,34 @@ Now it was testing only with Google Chrome.
     ```
     ./gradlew clean klin
     ```
-1. Go to `./klin` and add settings to `settings.json` file. 
+2. Go to `./klin` and add settings to `settings.json` file.
+ 
+   For each JIRA project fill these settings 
+ 
+   | Name                | Type   | Required | Default value | Description                                                                                                                                                                                                                                                                                                         | Validation                                                |
+   |---------------------|--------|----------|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
+   | name                | String | true     | -             | The name of the project. Value must be equal to JIRA project key                                                                                                                                                                                                                                                    | 1. Not blank string<br/>2. Length less then 10 characters |
+   | baseUrl             | String | true     | -             | URL to your JIRA instance                                                                                                                                                                                                                                                                                           | Correct URL                                               |
+   | logoPath            | String | false    | -             | Path to the JIRA project logo. <br/>1. Absolute path to the image on local machine<br/>2. Relative path to the image on local machine start from `klin` dir<br/>3. URL to the internet resource<br/><br/>There will be no logo on `klin` main page for current project if this parameter is not present in settings |                                                           |
+   | tooltipText         | String | false    | -             | The tooltip text that will be displayed when hovering over the project name on the main page of the extension.<br/><br/>There will be no tooltip on `klin` main page for current project if this parameter is not present in settings                                                                               | Length less then 20 characters                            |
+   | maxTaskNumberLength | Number | false    | 5             | The maximum number of digits for the valid JIRA task number                                                                                                                                                                                                                                                         | Positive number                                           |
+
+   Example 
    ```
    {
      "projects": [
        {
-         "name":"string", //Jira key (required). Example: WEB
-         "baseUrl":"string", //Base URL to your Jira instanse (required). Example: https://you.jira.instance
-         "logoPath":"string", //Path to the project logo (optional). Example: ./web.png
-         "maxTaskNumberLength":number, //The maximum number of characters (digits) in the task number (optional). Example: 4. Default: 5
-         "minTaskNumberLength":number  //The minimin number of characters (digits) in the task number (optional). Example: 2. Default: 1
+         "name":"JDK",
+         "baseUrl":"https://bugs.openjdk.org",
+         "logoPath":"https://bugs.openjdk.org/secure/projectavatar?pid=10100&avatarId=10301",
+         "tooltipText":"OpenJDK issues",
+         "maxTaskNumberLength":7
        }
      ]
    }
    ```
-   With these settings, `klin` will open pages with links like `https://you.jira.instanse/WEB-1`
-1. Open your Chrome and add new extension
+   With these settings, `klin` will open pages with links like `https://bugs.openjdk.org/browse/JDK-8292697`
+3. Open your Chrome and add new extension
     - Menu -> More Tools -> Extensions
     - Enable "Developer mode"
     - Press "Load unpacked"
