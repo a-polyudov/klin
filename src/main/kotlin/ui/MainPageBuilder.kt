@@ -7,7 +7,6 @@ import kotlinx.html.img
 import kotlinx.html.js.div
 import kotlinx.html.js.span
 import kotlinx.html.tabIndex
-import model.Project
 import model.Settings
 import ui.ProjectElementBuilder.buildHtmlFor
 
@@ -17,7 +16,7 @@ import ui.ProjectElementBuilder.buildHtmlFor
 object MainPageBuilder {
   fun loadMainPage(settings: Settings) =
     if (settings.projects.isEmpty()) emptyMainPage("Project list is empty")
-    else projectsMainPage(settings.projects)
+    else projectsMainPage(settings)
 
   fun emptyMainPage(text: String = "Ooops, something went wrong") {
     document.body?.append
@@ -27,14 +26,14 @@ object MainPageBuilder {
     gitHubLink()
   }
 
-  private fun projectsMainPage(projects: List<Project>) {
+  private fun projectsMainPage(settings: Settings) {
     document.body?.append
       ?.div("root")
       ?.apply {
-        projects
+        settings.projects
           .forEachIndexed { index, project ->
             append {
-              buildHtmlFor(index, project)
+              buildHtmlFor(index, project, settings.logoSizePx)
             }
           }
       }

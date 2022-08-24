@@ -1,8 +1,11 @@
 {
   "projects": [
     {
-      "name": "JDK",
-      "baseUrl": "https://bugs.openjdk.org"
+      "name":"JDK",
+      "baseUrl":"https://bugs.openjdk.org",
+      "logoPath":"https://bugs.openjdk.org/secure/projectavatar?pid=10100&avatarId=10301",
+      "tooltipText":"OpenJDK issues",
+      "maxTaskNumberLength":7
     }
   ]
 }

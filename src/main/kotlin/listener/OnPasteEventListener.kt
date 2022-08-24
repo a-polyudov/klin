@@ -12,7 +12,7 @@ class OnPasteEventListener(
   project: Project,
   override val element: HTMLInputElement,
 ) : EventListener<HTMLInputElement> {
-  private val regex = Regex("(${project.name}-)?(\\d{${project.minTaskNumberLength},${project.maxTaskNumberLength}})")
+  private val regex = Regex("(${project.name}-)?(\\d{1,${project.maxTaskNumberLength}})")
 
   override val type = "paste"
 

@@ -1,6 +1,5 @@
 body {
-    background: linear-gradient(to left top, #dee8ef85, white);
-    background-attachment: fixed;
+    background: linear-gradient(to left top, #dee8ef85, white) fixed;
 }
 
 .container {
@@ -9,13 +8,15 @@ body {
 
 .project-element {
     display: table-row;
-    margin-right: 10px;
-    margin-top: 7px;
 }
 
 .project-name {
     display: table-cell;
     text-align: center;
+}
+
+.project-label:hover {
+    cursor: pointer;
 }
 
 .project-label {
@@ -24,7 +25,7 @@ body {
     font-size: 1.0rem;
 }
 
-.task-number-span {
+.task-number {
     display: table-cell;
     padding: 3%;
     margin: auto;

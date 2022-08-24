@@ -63,24 +63,6 @@ class ProjectDeserializationTest {
   }
   //</editor-fold>
 
-  //<editor-fold desc="minTaskNumberLength">
-  @Test
-  fun shouldThrowExceptionIfMinTaskNumberLengthIsNegative() {
-    val ex = assertFailsWith<IllegalArgumentException> {
-      Json.decodeFromString<Project>(buildJson(minTaskNumberLength = -1))
-    }
-    assertEquals("Project 'JDK' min task number length should be positive", ex.message)
-  }
-
-  @Test
-  fun shouldThrowExceptionIfMinTaskNumberLengthIsZEqualsToZero() {
-    val ex = assertFailsWith<IllegalArgumentException> {
-      Json.decodeFromString<Project>(buildJson(minTaskNumberLength = 0))
-    }
-    assertEquals("Project 'JDK' min task number length should be positive", ex.message)
-  }
-  //</editor-fold>
-
   //<editor-fold desc="maxTaskNumberLength">
   @Test
   fun shouldThrowExceptionIfMaxTaskNumberLengthIsNegative() {
@@ -103,13 +85,11 @@ class ProjectDeserializationTest {
     name: String? = "JDK",
     baseUrl: String? = "https://bugs.openjdk.org",
     maxTaskNumberLength: Int? = 5,
-    minTaskNumberLength: Int? = 10,
   ) = """
     {
       ${if (name != null) "\"name\":\"$name\"," else ""}
       ${if (baseUrl != null) "\"baseUrl\":\"$baseUrl\"," else ""}
-      ${if (maxTaskNumberLength != null) "\"maxTaskNumberLength\":\"$maxTaskNumberLength\"," else ""}
-      ${if (minTaskNumberLength != null) "\"minTaskNumberLength\":\"$minTaskNumberLength\"" else ""}
+      ${if (maxTaskNumberLength != null) "\"maxTaskNumberLength\":\"$maxTaskNumberLength\"" else ""}
     }
   """
 }

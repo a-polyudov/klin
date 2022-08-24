@@ -7,5 +7,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class Settings(
-  val projects: List<Project>,
+    val projects: List<Project>,
+    val logoSizePx: Int = 40,
 )

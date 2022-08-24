@@ -9,10 +9,9 @@ import kotlinx.serialization.Serializable
  */
 private const val MAX_NAME_LENGTH = 10
 private const val DEFAULT_MAX_TASK_NUMBER_LENGTH = 5
-private const val DEFAULT_MIN_TASK_NUMBER_LENGTH = 1
+private const val MAX_TOOLTIP_TEXT_LENGTH = 20
 private val URL_REGEXP =
   "https?://(www\\.)?[-a-zA-Z\\d@:%._+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z\\d()@:%_+.~#?&/=]*)".toRegex()
-
 
 /**
  * @author a-polyudov
@@ -22,8 +21,8 @@ data class Project(
   val name: String,
   val baseUrl: String,
   val logoPath: String? = null,
+  val tooltipText: String? = null,
   val maxTaskNumberLength: Int = DEFAULT_MAX_TASK_NUMBER_LENGTH,
-  val minTaskNumberLength: Int = DEFAULT_MIN_TASK_NUMBER_LENGTH,
 ) {
   init {
     require(name.isNotBlank()) {
@@ -38,14 +37,13 @@ data class Project(
     require(URL_REGEXP.matches(baseUrl)) {
       "Project '${name}' base URL is invalid"
     }
-    require(minTaskNumberLength > 0) {
-      "Project '${name}' min task number length should be positive"
-    }
     require(maxTaskNumberLength > 0) {
       "Project '${name}' max task number length should be positive"
     }
-    require(maxTaskNumberLength >= minTaskNumberLength) {
-      "Project '${name}' task number length params are invalid"
+    tooltipText?.let {
+      require(it.length < MAX_TOOLTIP_TEXT_LENGTH) {
+        "Project '${name}' tooltip text length is too big"
+      }
     }
   }
 

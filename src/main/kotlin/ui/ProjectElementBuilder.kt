@@ -14,39 +14,39 @@ import org.w3c.dom.HTMLInputElement
  * @author a-polyudov
  */
 object ProjectElementBuilder {
-  fun TagConsumer<HTMLElement>.buildHtmlFor(index: Int, project: Project) {
+  fun TagConsumer<HTMLElement>.buildHtmlFor(index: Int, project: Project, logoSizePx: Int) {
     div("project-element") {
       id = "${project.name}-project-element"
       tabIndex = "-1"
       span("project-name") {
         id = "${project.name}-project-name"
+        if(index != 0) {
+          style = "padding-top: 10px;"
+        }
         project.logoPath?.let {
-          div("project-logo") {
-            img {
-              src = project.logoPath
-              width = "40"
-              height = "40"
-              tabIndex = "-1"
-            }
-          }
-        }
-        div {
-          span("project-label") {
-            id = "${project.name}-label"
+          img {
+            src = project.logoPath
+            width = logoSizePx.toString()
+            height = logoSizePx.toString()
             tabIndex = "-1"
-            +project.name.uppercase()
           }
         }
-        onClickFunction = {
-          window.open("${project.baseUrl}/projects/${project.name.uppercase()}", "_blank")
+        div("project-label") {
+          id = "${project.name}-label"
+          tabIndex = "-1"
+          project.tooltipText?.let { title = it }
+          +project.name.uppercase()
+
+          onClickFunction = {
+            window.open("${project.baseUrl}/projects/${project.name.uppercase()}", "_blank")
+          }
         }
       }
-      span("task-number-span") {
+      span("task-number") {
         input(type = InputType.text, classes = "task-number-input") {
           id = "${project.name}-task-number-input"
           tabIndex = index.toString()
           maxLength = project.maxTaskNumberLength.toString()
-          minLength = project.minTaskNumberLength.toString()
         }
       }
     }
