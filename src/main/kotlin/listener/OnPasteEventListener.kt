@@ -18,9 +18,9 @@ class OnPasteEventListener(
 
   override fun handle(event: Event) =
     (event as ClipboardEvent)
-      .also { console.log(regex.pattern) }
       .clipboardData
       ?.getData("Text")
+      ?.trim()
       ?.let { regex.matchEntire(element.value + it) }
       ?.groupValues
       ?.get(2)
