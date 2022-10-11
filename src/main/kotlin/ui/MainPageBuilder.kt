@@ -10,23 +10,13 @@ import kotlinx.html.tabIndex
 import model.Settings
 import ui.ProjectElementBuilder.buildHtmlFor
 
+private const val DEFAULT_TEXT_ERROR = "Ooops, something went wrong"
+
 /**
  * @author a-polyudov
  */
 object MainPageBuilder {
-  fun loadMainPage(settings: Settings) =
-    if (settings.projects.isEmpty()) emptyMainPage("Project list is empty")
-    else projectsMainPage(settings)
-
-  fun emptyMainPage(text: String = "Ooops, something went wrong") {
-    document.body?.append
-      ?.span {
-        +text
-      }
-    gitHubLink()
-  }
-
-  private fun projectsMainPage(settings: Settings) {
+  fun loadMainPage(settings: Settings) {
     document.body?.append
       ?.div("root")
       ?.apply {
@@ -37,10 +27,18 @@ object MainPageBuilder {
             }
           }
       }
-    gitHubLink()
+    addGitHubLink()
   }
 
-  private fun gitHubLink() {
+  fun emptyMainPage(text: String?) {
+    document.body?.append
+      ?.span {
+        +(text ?: DEFAULT_TEXT_ERROR)
+      }
+    addGitHubLink()
+  }
+
+  private fun addGitHubLink() {
     document.body?.append
       ?.div("github-link") {
         a(classes = "fa") {
