@@ -46,7 +46,7 @@ object MainPageBuilder {
           target = "_blank"
           tabIndex = "-1"
           img {
-            src = "./github_logo.png"
+            src = "github_logo.png"
             width = "15"
             height = "15"
           }
