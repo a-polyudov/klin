@@ -18,31 +18,31 @@ private val URL_REGEXP =
  */
 @Serializable
 data class Project(
-  val name: String,
-  val baseUrl: String,
+  val name: String = "", //default value is for correct error in case then "name" is not present in settings.json
+  val baseUrl: String = "", //default value is for correct error in case then "name" is not present in settings.json
   val logoPath: String? = null,
   val tooltipText: String? = null,
   val maxTaskNumberLength: Int = DEFAULT_MAX_TASK_NUMBER_LENGTH,
 ) {
   init {
-    require(name.isNotBlank()) {
+    validate(name.isNotBlank()) {
       "Project name is blank"
     }
-    require(name.length <= MAX_NAME_LENGTH) {
-      "Project name '${name}' is too long"
+    validate(name.length <= MAX_NAME_LENGTH) {
+      "Project name '${name}' is too long (max length is $MAX_NAME_LENGTH symbols)"
     }
-    require(baseUrl.isNotBlank()) {
+    validate(baseUrl.isNotBlank()) {
       "Project '${name}' base URL is blank"
     }
-    require(URL_REGEXP.matches(baseUrl)) {
+    validate(URL_REGEXP.matches(baseUrl)) {
       "Project '${name}' base URL is invalid"
     }
-    require(maxTaskNumberLength > 0) {
+    validate(maxTaskNumberLength > 0) {
       "Project '${name}' max task number length should be positive"
     }
     tooltipText?.let {
-      require(it.length < MAX_TOOLTIP_TEXT_LENGTH) {
-        "Project '${name}' tooltip text length is too big"
+      validate(it.length < MAX_TOOLTIP_TEXT_LENGTH) {
+        "Project '${name}' tooltip text length is too big (max length is $MAX_TOOLTIP_TEXT_LENGTH symbols)"
       }
     }
   }
