@@ -11,7 +11,7 @@ import ui.MainPageBuilder
 
 private val mapper = Json {
   ignoreUnknownKeys = true
-  coerceInputValues = true //is for avoid uncatchable MissingFieldException
+  coerceInputValues = true //for avoid uncatchable MissingFieldException
 }
 
 /**
@@ -27,7 +27,7 @@ fun main() {
       } catch (e: ValidationException) {
         MainPageBuilder.emptyMainPage(e.message)
       } catch (e: Exception) {
-        console.log("Error (${e::class.simpleName}): ${e.message}")
+        console.log("Error: ${e.message}")
         MainPageBuilder.emptyMainPage(null)
       }
     }
