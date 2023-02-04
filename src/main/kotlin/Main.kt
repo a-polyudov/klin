@@ -2,8 +2,11 @@ import kotlinx.browser.window
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.await
 import kotlinx.coroutines.launch
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.decodeFromDynamic
+import kotlinx.serialization.json.encodeToDynamic
 import model.Settings
 import model.ValidationException
 import ui.MainPageBuilder
@@ -42,4 +45,31 @@ private suspend fun loadSettings(): Settings =
     .await()
     .text()
     .await()
-    .let(mapper::decodeFromString)
+    .let<String, Settings>(mapper::decodeFromString)
+    .also { testLocalStorage(it) }
+
+@OptIn(ExperimentalSerializationApi::class)
+private suspend fun testLocalStorage(settings: Settings) {
+  console.log("SETTINGS: $settings")
+  val dataToWrite = js("{}")
+  dataToWrite["settings"] = mapper.encodeToDynamic(settings)
+
+  chrome.storage.local.set(dataToWrite)
+
+  val storageData = chrome.storage.local.get("settings").await()
+  val storageSettingsJs = storageData["settings"]
+  console.log("STORAGE: $storageSettingsJs")
+
+  when (storageSettingsJs) {
+    null -> {
+      console.log("UNDEFINED")
+    }
+
+    else -> {
+      console.log("NOT UNDEFINED")
+      val result = mapper.decodeFromDynamic(Settings.serializer(), storageSettingsJs).toString()
+      console.log("STORAGE SETTING: $result")
+    }
+  }
+}
+
