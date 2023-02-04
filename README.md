@@ -1,6 +1,5 @@
-# klin
+# <img width="24" heigh="24" alt="logo" src="https://user-images.githubusercontent.com/17144826/216780487-d0138ed4-474f-451b-90eb-75d087977073.png"> klin
 The tiny tool to easily open a JIRA issue
-
 
 <img width="214" alt="image" src="https://user-images.githubusercontent.com/17144826/186452528-5c0d650c-7325-4050-bf60-03399ca4db77.png">
 
