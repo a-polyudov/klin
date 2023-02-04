@@ -18,5 +18,8 @@
         "linux": "Ctrl+Shift+Y"
       }
     }
+  },
+  "icons": {
+    "128": "logo.png"
   }
 }
