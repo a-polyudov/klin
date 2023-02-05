@@ -11,13 +11,16 @@ import me.mmt.klin.options.listener.Direction
 import me.mmt.klin.options.listener.OnButtonClickEventListener
 import me.mmt.klin.options.listener.OnDeleteProjectButtonClick
 import me.mmt.klin.options.listener.OnMoveProjectButtonClick
+import me.mmt.klin.options.ui.ElementConstants.NEW_PROJECT_BUTTON_ID
+import me.mmt.klin.options.ui.ElementConstants.PROJECT_ACTION_BUTTON_CLASS
+import me.mmt.klin.options.ui.ElementConstants.TABLE_CELL_CLASS
+import me.mmt.klin.options.ui.ElementConstants.TABLE_HEAD_CELL_CLASS
 import me.mmt.klin.ui.CommonCssClasses.PROJECT_LABEL_CLASS
 import me.mmt.klin.ui.addGitHubLink
 import org.w3c.dom.HTMLButtonElement
 import org.w3c.dom.HTMLElement
 
-private const val TABLE_HEAD_CELL_CLASS = "table-head-cell"
-private const val TABLE_CELL_CLASS = "table-cell"
+
 
 object OptionsPageBuilder {
   fun build(settings: Settings) {
@@ -61,7 +64,7 @@ object OptionsPageBuilder {
 
   private fun TagConsumer<HTMLElement>.addCreateNewProjectButton() {
     button {
-      id = "create-new-project-button"
+      id = NEW_PROJECT_BUTTON_ID
       classes = setOf("new-project-button")
       +"+"
     }
@@ -79,25 +82,26 @@ object OptionsPageBuilder {
       div(TABLE_CELL_CLASS) {
         button {
           id = "${project.name}-edit-project-button"
+          classes = setOf(PROJECT_ACTION_BUTTON_CLASS)
           +"✎"
         }
         if (index != lastIndex) {
           button {
             id = "${project.name}-move-down-project-button"
-            classes = setOf("reposition-project-button", "move-down-project-button")
+            classes = setOf("reposition-project-button", "move-down-project-button", PROJECT_ACTION_BUTTON_CLASS)
             +"↓"
           }
         }
         if (index != 0) {
           button {
             id = "${project.name}-move-up-project-button"
-            classes = setOf("reposition-project-button", "move-up-project-button")
+            classes = setOf("reposition-project-button", "move-up-project-button", PROJECT_ACTION_BUTTON_CLASS)
             +"↑"
           }
         }
         button {
           id = "${project.name}-delete-project-button"
-          classes = setOf("delete-project-button")
+          classes = setOf("delete-project-button", PROJECT_ACTION_BUTTON_CLASS)
           +"✕"
         }
       }

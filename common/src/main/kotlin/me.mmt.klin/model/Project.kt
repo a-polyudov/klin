@@ -18,8 +18,8 @@ private val URL_REGEXP =
  */
 @Serializable
 data class Project(
-  val name: String = "", //default value is for correct error in case then "name" is not present in settings.json
-  val baseUrl: String = "", //default value is for correct error in case then "name" is not present in settings.json
+  val name: String = "", //default value is for correct error in case then "name" is not present in settings
+  val baseUrl: String = "", //default value is for correct error in case then "name" is not present in settings
   val logoPath: String? = null,
   val tooltipText: String? = null,
   val maxTaskNumberLength: Int = DEFAULT_MAX_TASK_NUMBER_LENGTH,

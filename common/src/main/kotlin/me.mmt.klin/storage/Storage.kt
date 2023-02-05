@@ -5,9 +5,9 @@ package chrome.storage
 
 import kotlin.js.Promise
 
-external val local: StorageArea
+internal external val local: StorageArea
 
-external interface StorageArea {
+internal external interface StorageArea {
 
   fun get(keys: dynamic = definedExternally): Promise<dynamic>
 

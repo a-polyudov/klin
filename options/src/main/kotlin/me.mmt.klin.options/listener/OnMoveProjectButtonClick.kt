@@ -19,7 +19,7 @@ enum class Direction {
   DOWN
 }
 
-class OnMoveProjectButtonClick(
+internal class OnMoveProjectButtonClick(
   override val element: HTMLButtonElement,
   private val project: Project,
   private val direction: Direction,

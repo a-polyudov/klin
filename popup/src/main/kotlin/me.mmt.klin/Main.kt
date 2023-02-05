@@ -24,9 +24,9 @@ fun main() {
   window.onload = {
     MainScope().launch {
       try {
-        StorageSettingsProvider.read()
-          ?.let(MainPageBuilder::build)
-          ?: MainPageBuilder.emptyMainPage("Cannot load settings")
+        loadSettings()
+          .also { StorageSettingsProvider.write(it) }
+          .let(MainPageBuilder::build)
       } catch (e: ValidationException) {
         MainPageBuilder.emptyMainPage(e.message)
       } catch (e: Exception) {
