@@ -1,7 +1,7 @@
 div.grey-grid-table {
   border: 2px solid #FFFFFF;
   width: 100%;
-  text-align: left;
+  text-align: center;
   border-collapse: collapse;
 }
 .div-table.grey-grid-table .table-cell, .div-table.grey-grid-table .table-head-cell {
@@ -38,10 +38,17 @@ div.grey-grid-table {
 .grey-grid-table .tableFootStyle {
   font-size: 14px;
 }
-/* div-table.com */
 .div-table{ display: table; }
 .table-row { display: table-row; }
 .table-head { display: table-header-group;}
 .table-cell, .table-head-cell { display: table-cell;}
 .table-head { display: table-header-group;}
 .table-body { display: table-row-group;}
+
+.delete-project-button {
+    color: red;
+}
+
+.new-project-button {
+    color: green;
+}

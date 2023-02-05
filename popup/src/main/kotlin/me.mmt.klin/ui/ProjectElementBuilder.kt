@@ -7,6 +7,7 @@ import kotlinx.html.js.div
 import kotlinx.html.js.onClickFunction
 import me.mmt.klin.listener.*
 import me.mmt.klin.model.Project
+import me.mmt.klin.ui.CommonCssClasses.PROJECT_LABEL_CLASS
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.HTMLInputElement
 
@@ -31,7 +32,7 @@ object ProjectElementBuilder {
             tabIndex = "-1"
           }
         }
-        div("project-label") {
+        div(PROJECT_LABEL_CLASS) {
           id = "${project.name}-label"
           tabIndex = "-1"
           project.tooltipText?.let { title = it }

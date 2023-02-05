@@ -7,7 +7,6 @@ import me.mmt.klin.model.ValidationException
 import me.mmt.klin.storage.StorageSettingsProvider
 import me.mmt.klin.ui.MainPageBuilder
 
-
 /**
  * @author a-polyudov
  */

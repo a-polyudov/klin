@@ -1,13 +1,15 @@
 package me.mmt.klin.ui
 
-import kotlinx.browser.document
 import kotlinx.html.TagConsumer
 import kotlinx.html.a
-import kotlinx.html.dom.append
 import kotlinx.html.img
 import kotlinx.html.js.div
 import kotlinx.html.tabIndex
 import org.w3c.dom.HTMLElement
+
+object CommonCssClasses {
+  const val PROJECT_LABEL_CLASS = "project-label"
+}
 
 fun TagConsumer<HTMLElement>.addGitHubLink() {
   div("github-link") {
