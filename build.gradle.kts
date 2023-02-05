@@ -19,9 +19,7 @@ tasks {
     group = "build"
 
     val subprojectNames = subprojects.map { it.name }
-    println(subprojectNames)
     val tasks = listOf("clean") + subprojectNames.map { ":${it}:assemble" }
-    println(tasks)
     dependsOn(tasks)
     doLast {
       val releaseDir = File(releaseDirPath).also {

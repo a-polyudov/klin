@@ -19,12 +19,6 @@ body {
     cursor: pointer;
 }
 
-.project-label {
-    color: #040404b0;
-    font-family: monospace;
-    font-size: 1.0rem;
-}
-
 .task-number {
     display: table-cell;
     padding: 3%;
@@ -41,23 +35,4 @@ body {
 
 .task-number-input:invalid {
     background: linear-gradient(to right top, rgba(236, 130, 130, 0.427), white);
-}
-
-.github-link {
-    text-align: right;
-    font-size: 0.8rem;
-}
-
-.github-link img {
-    vertical-align: middle;
-}
-
-.github-link a:link {
-  color: black;
-  text-decoration: none;
-}
-
-.github-link a:visited {
-  color: black;
-  text-decoration: none;
 }

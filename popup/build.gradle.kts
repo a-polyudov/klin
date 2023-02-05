@@ -5,7 +5,6 @@ plugins {
 
 dependencies {
   implementation(project(":common"))
-  implementation("org.jetbrains.kotlinx:kotlinx-html-js:0.8.0")
 
   testImplementation(kotlin("test"))
 }
