@@ -17,7 +17,6 @@ class OnDeleteProjectButtonClick(
   override val type = "click"
 
   override fun handle(event: Event) {
-    console.log("delete: ${project.name}")
     MainScope().launch {
       StorageSettingsProvider.read()?.let { currentSettings ->
         val newProjects = ArrayList(currentSettings.projects)

@@ -77,6 +77,10 @@ object OptionsPageBuilder {
       div(TABLE_CELL_CLASS) { project.tooltipText?.unaryPlus() }
       div(TABLE_CELL_CLASS) { +project.maxTaskNumberLength.toString() }
       div(TABLE_CELL_CLASS) {
+        button {
+          id = "${project.name}-edit-project-button"
+          +"✎"
+        }
         if (index != lastIndex) {
           button {
             id = "${project.name}-move-down-project-button"

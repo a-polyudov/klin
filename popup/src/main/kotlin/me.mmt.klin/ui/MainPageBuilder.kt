@@ -17,6 +17,7 @@ object MainPageBuilder {
     document.body?.append
       ?.div("root")
       ?.apply {
+        //TODO: add loginc for empty projects
         settings.projects
           .forEachIndexed { index, project ->
             append {
