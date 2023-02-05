@@ -24,9 +24,11 @@ fun main() {
   window.onload = {
     MainScope().launch {
       try {
-        loadSettings()
-          .also { StorageSettingsProvider.write(it) }
-          .let(MainPageBuilder::build)
+//        loadSettings()
+//          .also { StorageSettingsProvider.write(it) }
+        StorageSettingsProvider.read()
+          ?.let(MainPageBuilder::build)
+          ?: MainPageBuilder.emptyMainPage("Use settings to add projects")
       } catch (e: ValidationException) {
         MainPageBuilder.emptyMainPage(e.message)
       } catch (e: Exception) {

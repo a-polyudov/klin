@@ -32,6 +32,7 @@ object OptionsPageBuilder {
           div("table-row") {
             div(TABLE_HEAD_CELL_CLASS) { +"Name" }
             div(TABLE_HEAD_CELL_CLASS) { +"Base URL" }
+            div(TABLE_HEAD_CELL_CLASS) { +"Logo path" }
             div(TABLE_HEAD_CELL_CLASS) { +"Tooltip text" }
             div(TABLE_HEAD_CELL_CLASS) { +"Max task number length" }
             div(TABLE_HEAD_CELL_CLASS) { +"Actions" }
@@ -77,6 +78,7 @@ object OptionsPageBuilder {
     div("table-row") {
       div("$TABLE_CELL_CLASS $PROJECT_LABEL_CLASS") { +project.name }
       div(TABLE_CELL_CLASS) { +project.baseUrl }
+      div(TABLE_CELL_CLASS) { project.logoPath?.unaryPlus() }
       div(TABLE_CELL_CLASS) { project.tooltipText?.unaryPlus() }
       div(TABLE_CELL_CLASS) { +project.maxTaskNumberLength.toString() }
       div(TABLE_CELL_CLASS) {
