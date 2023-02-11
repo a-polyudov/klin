@@ -36,10 +36,9 @@ object ProjectElementBuilder {
           tabIndex = "-1"
           project.tooltipText?.let { title = it }
           +project.name.uppercase()
-
-          onClickFunction = {
-            window.open("${project.baseUrl}/projects/${project.name.uppercase()}", "_blank")
-          }
+        }
+        onClickFunction = {
+          window.open("${project.baseUrl}/projects/${project.name.uppercase()}", "_blank")
         }
       }
       span("task-number") {
