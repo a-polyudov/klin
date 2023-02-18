@@ -15,7 +15,7 @@ body {
     text-align: center;
 }
 
-.project-label:hover {
+.project-name:hover {
     cursor: pointer;
 }
 
