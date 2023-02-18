@@ -1,8 +1,14 @@
+import io.gitlab.arturbosch.detekt.Detekt
+
 allprojects {
   repositories {
     mavenCentral()
     maven("https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven")
   }
+}
+
+plugins {
+  id("io.gitlab.arturbosch.detekt").version("1.22.0")
 }
 
 tasks {
@@ -20,7 +26,7 @@ tasks {
 
     val subprojectNames = subprojects.map { it.name }
     val tasks = listOf("clean") + subprojectNames.map { ":${it}:assemble" }
-    dependsOn(tasks)
+    dependsOn(listOf("detektAll") + tasks)
     doLast {
       val releaseDir = File(releaseDirPath).also {
         delete(it)
@@ -30,5 +36,17 @@ tasks {
         .filterNot { it == "common" }
         .onEach { File("${project(":${it}").buildDir.toPath()}/distributions").copyRecursively(releaseDir) }
     }
+  }
+
+  @Suppress("UNUSED_VARIABLE")
+  val detektAll by registering(Detekt::class) {
+    parallel = true
+    autoCorrect = true
+    setSource(files(projectDir))
+    include("**/*.kt")
+    include("**/*.kts")
+    exclude("**/resources/**")
+    exclude("**/build/**")
+    config.setFrom(files("${rootDir.toPath()}/config/detekt/detekt.yml"))
   }
 }

@@ -15,11 +15,10 @@ import me.mmt.klin.options.ui.ElementConstants.NEW_PROJECT_BUTTON_ID
 import me.mmt.klin.options.ui.ElementConstants.PROJECT_ACTION_BUTTON_CLASS
 import me.mmt.klin.options.ui.ElementConstants.TABLE_CELL_CLASS
 import me.mmt.klin.options.ui.ElementConstants.TABLE_HEAD_CELL_CLASS
-import me.mmt.klin.ui.CommonCssClasses.PROJECT_LABEL_CLASS
+import me.mmt.klin.ui.CommonCssClass.PROJECT_LABEL_CLASS
 import me.mmt.klin.ui.addGitHubLink
 import org.w3c.dom.HTMLButtonElement
 import org.w3c.dom.HTMLElement
-
 
 
 object OptionsPageBuilder {

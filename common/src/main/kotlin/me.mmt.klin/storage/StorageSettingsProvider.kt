@@ -6,6 +6,9 @@ import kotlinx.serialization.json.decodeFromDynamic
 import kotlinx.serialization.json.encodeToDynamic
 import me.mmt.klin.model.Settings
 
+/**
+ * @author a-polyudov
+ */
 @OptIn(ExperimentalSerializationApi::class)
 object StorageSettingsProvider {
 

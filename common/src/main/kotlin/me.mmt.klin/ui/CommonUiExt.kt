@@ -7,10 +7,9 @@ import kotlinx.html.js.div
 import kotlinx.html.tabIndex
 import org.w3c.dom.HTMLElement
 
-object CommonCssClasses {
-  const val PROJECT_LABEL_CLASS = "project-label"
-}
-
+/**
+ * @author a-polyudov
+ */
 fun TagConsumer<HTMLElement>.addGitHubLink() {
   div("github-link") {
     a(classes = "fa") {
