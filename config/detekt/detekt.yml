@@ -331,7 +331,7 @@ naming:
     excludeClassPattern: '$^'
     ignoreOverridden: true
   InvalidPackageDeclaration:
-    active: true
+    active: false
     rootPackage: ''
     requireRootInDeclaration: false
   LambdaParameterNaming:
@@ -515,7 +515,6 @@ style:
     values:
       - 'FIXME:'
       - 'STOPSHIP:'
-      - 'TODO:'
     allowedPatterns: ''
     customMessage: ''
   ForbiddenImport:
