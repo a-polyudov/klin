@@ -25,16 +25,19 @@ tasks {
     group = "build"
 
     val subprojectNames = subprojects.map { it.name }
-    val tasks = listOf("clean") + subprojectNames.map { ":${it}:assemble" }
-    dependsOn(listOf("detektAll") + tasks)
+    dependsOn(listOf("detektAll", "clean") + subprojectNames.map { ":${it}:assemble" })
     doLast {
       val releaseDir = File(releaseDirPath).also {
         delete(it)
       }
-      File("${project(":common").buildDir.toPath()}/processedResources/js/main").copyRecursively(releaseDir)
+      File("${project(":common").buildDir.toPath()}/processedResources/js/main")
+        .copyRecursively(releaseDir)
       subprojectNames
         .filterNot { it == "common" }
-        .onEach { File("${project(":${it}").buildDir.toPath()}/distributions").copyRecursively(releaseDir) }
+        .onEach {
+          File("${project(":${it}").buildDir.toPath()}/distributions")
+            .copyRecursively(releaseDir)
+        }
     }
   }
 
