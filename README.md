@@ -5,9 +5,8 @@ The tiny tool to easily open a JIRA issue
 
 
 ## Project status 
-This is a personal R&D project and it is still in developing stage.
-
-Now it was testing only with Google Chrome.
+This is a personal R&D project, and it is still in the development stage. 
+Currently, it has only been tested with Google Chrome.
 
 ## Build
 
@@ -15,9 +14,9 @@ Now it was testing only with Google Chrome.
     ```
     ./gradlew clean klin
     ```
-2. Go to `./klin` and add settings to `settings.json` file.
- 
-   For each JIRA project fill these settings 
+2. Navigate to `./klin` and add the settings to the `settings.json` file.
+
+   Fill in these settings for each JIRA project:
  
    | Name                | Type   | Required | Default value | Description                                                                                                                                                                                                                                                      | Validation                                                |
    |---------------------|--------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
@@ -41,8 +40,8 @@ Now it was testing only with Google Chrome.
      ]
    }
    ```
-   With these settings, `klin` will open pages with links like `https://bugs.openjdk.org/browse/JDK-8292697`
-3. Open your Chrome and add new extension
+   With these settings, `klin` will open pages with links such as `https://bugs.openjdk.org/browse/JDK-8292697`
+3. Open Chrome and add the new extension:
     - Menu -> More Tools -> Extensions
     - Enable "Developer mode"
     - Press "Load unpacked"
@@ -50,13 +49,13 @@ Now it was testing only with Google Chrome.
 
 ## Usage
 
-You can call extension by hotkeys when Chrome window is active:
-- `Ctrl+Shift+Y` on Windows/Linux
-- `Command+Shift+Y` on MacOS
+You can call the extension using hotkeys when the Chrome window is active:
+   - `Ctrl+Shift+Y` on Windows/Linux
+   - `Command+Shift+Y` on MacOS.
 
-Or you can open `klin` from extensions toolbar.
+Alternatively, you can open `klin` from the extensions toolbar.
 
-If multiple projects have been added to `settings.json` you can use Tab to change active project.
+If multiple projects have been added to `settings.json`, you can use the Tab key to change the active project.
 
-Type task number (or paste it from the clipboard) and then press `Enter`. Jira task will be opened in new tab.
-If `Enter` was pressed with `Shift` then JIRA issue will be opened in the background (without focus).
+Type the task number (or paste it from the clipboard), and then press Enter. The Jira task will open in a new tab.
+If `Enter` was pressed with `Shift`, then the Jira issue will open in the background (without focus).
