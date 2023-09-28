@@ -50,8 +50,8 @@ Currently, it has only been tested with Google Chrome.
 ## Usage
 
 You can call the extension using hotkeys when the Chrome window is active:
-   - `Ctrl+Shift+Y` on Windows/Linux
-   - `Command+Shift+Y` on MacOS.
+   - `Ctrl+Shift+O` on Windows/Linux
+   - `Command+Shift+O` on MacOS.
 
 Alternatively, you can open `klin` from the extensions toolbar.
 
